@@ -57,6 +57,6 @@ public class CompassActivity extends Activity {
     }
 
     private float radian2degree(float radian) {
-        return radian * 100 / (float)Math.PI;
+        return radian * 180 / (float)Math.PI;
     }
 }

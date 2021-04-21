@@ -9,10 +9,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnOpenCompass;
-    Intent intentCompassActivity;
-
-
+    Button btnOpenCompass, btnMap;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         btnOpenCompass = findViewById(R.id.btnOpenCompassView);
         btnOpenCompass.setOnClickListener(this);
+        btnMap.findViewById(R.id.btnMap);
+        btnMap.setOnClickListener(this);
 
     }
 
@@ -27,10 +27,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btnOpenCompassView:
-                intentCompassActivity = new Intent(this, CompassActivity.class);
-                startActivity(intentCompassActivity); break;
+                intent = new Intent(this, CompassActivity.class);
+
+            case R.id.btnMap:
+                intent=  new Intent(this, MapsActivity.class);
             default: break;
 
+
         }
+        startActivity(intent);
     }
 }
